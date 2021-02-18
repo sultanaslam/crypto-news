@@ -1,18 +1,22 @@
 {% extends 'base.html' %}
 
 {% block content%}
-	<div>
-		{% for key, value in price.items %}
-			{{key}}: {{ value.USD }}<br /> 
-		{% endfor %}
-	<div>
-
 	<div class="jumbotron p-2 mb-4 bg-light rounded">
 		<div class="container">
 			<h1 class="display-4">Crypto Currency News</h1>
 			<p class="lead">Insights into the crypto world’s biggest news.</p>
 		</div>
 	</div>
+	
+	<div>
+		{% for key, value in price.DISPLAY.items %}
+			<h4>{{key}}</h4>
+			<div><b>Price	</b>: {{ value.USD.PRICE }}</div> 
+			<div><b>Market	</b>: {{ value.USD.MKTCAP }}</div> 
+			<hr />
+		{% endfor %}
+	<div>
+
   <div>
 		<ul>
 			{% for news in api.Data %}

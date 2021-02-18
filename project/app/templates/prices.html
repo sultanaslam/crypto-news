@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content%}
+	{% if crypto.Response %}
+		<h4 class='text-danger'>{{ crypto.Message }}</h4>
+	{% else %}
+		{% for key, value in crypto.DISPLAY.items %}
+			<div class="jumbotron p-4 mb-4 bg-light rounded">
+				<div class="container">
+					<h4>{{key}}</h4>
+					<div><b>Price	</b>: {{ value.USD.PRICE }}</div> 
+					<div><b>Market	</b>: {{ value.USD.MKTCAP }}</div>
+				</div>
+			</div>
+		{% endfor %}	
+	{% endif %}
+{% endblock %}
